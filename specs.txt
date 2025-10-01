@@ -1,0 +1,51 @@
+STARTUP
+
+A - 
+    gather data from adresses file - array of strings - all have to be converted to lowercase to maintain case insensitivity
+    Figure out how to separate them from the given file - maybe use that they are separated by  \n?
+
+
+B - 
+    get user input (file argument, the only one thats supposed to be there, if isnt at all, suppose it an empty string and give all options)
+
+
+
+
+algorithm:
+
+[user input = 0 letters = INPUT]
+
+iterate through all the adresses in adress file, and get all their first letters into LETTER_LIST. Use that for <OUTPUT 2>
+
+
+
+[user input = N letters = INPUT]
+
+for each adress, check if its first N letters are equal to INPUT. All that are found should be put into a separate LIST for now.
+If no matching adresses are found, skip to <OUTPUT 3>
+
+If the LIST has only one element, skip to <OUTPUT 1>
+
+If it has multiple elements:
+From the LIST, get all the second letters, and put them into LETTER_LIST.
+This letter list now has to be converted into a single STRING of uppercase letters.
+This STRING is then used for <OUTPUT 2>
+ALSO if LIST has multiple elements, but one of them matches INPUT exactly, use both <OUTPUT 1> and <OUTPUT 2> in that order
+
+
+OUTPUTS
+1. Adresa nalezena
+
+    Nalezena pouze jedna adresa, která má jako prefix vstupní řetězec
+     -> Found: <ta jedna celá odpovídající adresa>
+
+
+2. Adresa vyžaduje specifikaci
+
+    Nalezeno více adres, které mají jako prefix vstupní řetězec
+    ->  Enable: <capitalized letters that could be used to get all possible adresses, no spaces between them>
+
+
+3. Adresa nenalezena
+
+    -> Not found
